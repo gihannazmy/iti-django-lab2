@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Trainee List{% endblock %}
+
+{% block content %}
+<h2>Trainee List</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Name</th>
+        <th>Email</th>
+        <th>Actions</th>
+    </tr>
+    {% for trainee in trainees %}
+    <tr>
+        <td>{{ trainee.id }}</td>
+        <td>{{ trainee.name }}</td>
+        <td>{{ trainee.email }}</td>
+        <td>
+            <a href="{% url 'trainee_update' trainee.id %}">Update</a>
+            <a href="{% url 'trainee_delete' trainee.id %}">Delete</a>
+            <a href="{% url 'trainee_details' trainee.id %}">Details</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

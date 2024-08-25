@@ -1,0 +1,27 @@
+{% extends 'base.html' %}
+
+{% block title %}Account List{% endblock %}
+
+{% block content %}
+<h2>Account List</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Email</th>
+        <th>Password</th>
+        <th>Actions</th>
+    </tr>
+    {% for account in accounts %}
+    <tr>
+        <td>{{ account.id }}</td>
+        <td>{{ account.email }}</td>
+        <td>{{ account.password }}</td>
+        <td>
+            <a href="{% url 'account_update' account.id %}">Update</a>
+            <a href="{% url 'account_delete' account.id %}">Delete</a>
+            <a href="{% url 'account_details' account.id %}">Details</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

@@ -1,0 +1,15 @@
+{% extends 'base.html' %}
+
+{% block title %}Add New Account{% endblock %}
+
+{% block content %}
+<h2>Add New Account</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="email">Email:</label>
+    <input type="email" id="email" name="email" required>
+    <label for="password">Password:</label>
+    <input type="password" id="password" name="password" required>
+    <button type="submit">Add Account</button>
+</form>
+{% endblock %}

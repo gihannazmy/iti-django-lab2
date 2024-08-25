@@ -1,0 +1,26 @@
+<!-- templates/track/list.html -->
+{% extends 'base.html' %}
+
+{% block title %}Track List{% endblock %}
+
+{% block content %}
+<h2>Track List</h2>
+<table>
+    <tr>
+        <th>ID</th>
+        <th>Track Name</th>
+        <th>Actions</th>
+    </tr>
+    {% for track in tracks %}
+    <tr>
+        <td>{{ track.id }}</td>
+        <td>{{ track.name }}</td>
+        <td>
+            <a href="{% url 'track_update' track.id %}">Update</a>
+            <a href="{% url 'track_delete' track.id %}">Delete</a>
+            <a href="{% url 'track_details' track.id %}">Details</a>
+        </td>
+    </tr>
+    {% endfor %}
+</table>
+{% endblock %}

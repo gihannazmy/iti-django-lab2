@@ -1,0 +1,14 @@
+<!-- templates/track/update_form.html -->
+{% extends 'base.html' %}
+
+{% block title %}Update Track{% endblock %}
+
+{% block content %}
+<h2>Update Track</h2>
+<form method="post">
+    {% csrf_token %}
+    <label for="name">Track Name:</label>
+    <input type="text" id="name" name="name" value="{{ track.name }}" required>
+    <button type="submit">Update Track</button>
+</form>
+{% endblock %}
