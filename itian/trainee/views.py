@@ -1,9 +1,9 @@
 from django.shortcuts import render, redirect, get_object_or_404
-from .models import Trainee
+# from .models import Trainee
 
-def trainee_list(request):
+def trainees_list(request):
     trainees = Trainee.objects.all()
-    return render(request, 'trainee/accountList.html', {'trainees': trainees})
+    return render(request, 'trainee/traineesList.html', {'trainees': trainees})
 
 def trainee_create(request):
     if request.method == 'POST':

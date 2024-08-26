@@ -8,5 +8,5 @@ urlpatterns = [
     path('Add/', track_create, name='tracks_create'),
     path('Update/<int:id>', track_update, name='track_update' ),
     path('Delete/<int:id>', track_delete, name='track_delete' ),
-    path("Details/<int:id>", track_detail, name="track_details")
+    path("Details/<int:id>", track_details, name="track_details")
 ]

@@ -13,9 +13,9 @@ def get_track_or_404(track_list, id):
             return track
     return None
 
-def track_list(request):
+def tracks_list(request):
     context = {'tracks': tracks}
-    return render(request, 'track/trackList.html', context)
+    return render(request, 'track/tracksList.html', context)
 
 def track_create(request):
     if request.method == 'POST':

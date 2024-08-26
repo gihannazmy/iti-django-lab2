@@ -14,7 +14,7 @@ def get_account_or_404(account_list, id):
             return account
     return None
 
-def account_list(request):
+def accounts_list(request):
     context = {'accounts': accounts}
     return render(request, 'account/createList.html', context)
 
